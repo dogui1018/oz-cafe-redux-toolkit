@@ -1,6 +1,9 @@
 import data from "../assets/data";
+import { useSelector } from "react-redux";
 
-function Cart({ menu, cart, setCart }) {
+function Cart({ setCart }) {
+  const menu = useSelector((state) => state.menu.items);
+  const cart = useSelector((state) => state.cart.items);
   if (!menu)
     return (
       <div style={{ textAlign: "center", margin: "80px" }}>
